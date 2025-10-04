@@ -1,3 +1,23 @@
+# Task sequence
+run this command for task
+```bash
+ros2 run task_main set_mode_client GUIDED && ros2 run task_main minimal_publisher && ros2 run task_main minimal_subscriber
+```
+set_mode_client: ros service node for setting mode
+
+minimal_publisher: ros publisher for moving auv down for 3s
+
+minimal_subscriber: ros subscriber and publisher, subscribes to bounding box and updates class variables, publishes Twist commands based on class variables
+
+## Code logic:
+
+once gate is detected, constantly centralise and move towards it
+
+if flare is in the middle, move sideways to avoid it
+
+see comments for more detail
+
+
 # Probation Task: Going Through Gate with Unity Simulation
 
 This repository contains the probation task, focusing on autonomous gate navigation using Unity simulation integrated with ROS 2.
